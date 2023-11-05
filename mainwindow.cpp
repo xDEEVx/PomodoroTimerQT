@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     setWindowTitle("~ pomodoro ~");
-    setFixedSize(250, 120);
+    setFixedSize(250, 150);
 
     titleLabel = new QLabel("POMODORO", this);
     titleLabel->setGeometry(0, 0, 250, 50);
@@ -33,8 +33,14 @@ MainWindow::MainWindow(QWidget *parent)
     connect(stopButton, SIGNAL(clicked()), timer, SLOT(stop()));
     stopButton->setStyleSheet( " background-color: #393939; color: #ffffff; border-color: #393939; alternate-background-color: #393939;" );
 
+    changeButton = new QPushButton("CHANGE", this);
+    changeButton->setGeometry(10, 115, 230, 30);
+    connect(changeButton, SIGNAL(clicked()), this, SLOT(change()));
+    changeButton->setStyleSheet( " background-color: #393939; color: #ffffff; border-color: #393939; alternate-background-color: #393939;" );
+
     timeLeft = 25 * 60;
     isPomodoro = true;
+    isBreak = false;
 }
 
 MainWindow::~MainWindow()
@@ -43,6 +49,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::startPomodoro()
 {
+    isBreak = false;
     timeLeft = 25 * 60;
     progressBar->setRange(0, timeLeft);
     progressBar->setValue(timeLeft);
@@ -54,6 +61,7 @@ void MainWindow::startPomodoro()
 
 void MainWindow::startBreak()
 {
+    isBreak = true;
     timeLeft = 5 * 60;
     progressBar->setRange(0, timeLeft);
     progressBar->setValue(timeLeft);
@@ -93,4 +101,15 @@ void MainWindow::stop()
     timeLeft=0;
     progressBar->setValue(0);
     isPomodoro = false;
+    isBreak = false;
+}
+
+void MainWindow::change()
+{
+    if(isBreak) {
+        startPomodoro();
+    }
+    else {
+        startBreak();
+    }
 }

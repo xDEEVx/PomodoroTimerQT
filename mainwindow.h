@@ -20,6 +20,7 @@ private slots:
     void updateTimer();
     void startBreak();
     void stop();
+    void change();
 
 private:
     QLabel *titleLabel;
@@ -29,8 +30,10 @@ private:
     QMessageBox *notificationpause;
     int timeLeft;
     bool isPomodoro;
+    bool isBreak;
     QPushButton *startButton;
     QPushButton *stopButton;
+    QPushButton *changeButton;
 };
 
 #endif // MAINWINDOW_H
