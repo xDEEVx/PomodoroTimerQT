@@ -1,10 +1,7 @@
-<h1>Pomodoro Timer</h1>
-<div align="center">
-  <img src="https://github.com/night3098/PomodoroTimerQT/assets/134074263/25bee3c1-1d24-4491-abb0-f2309a05f1bd"></img>
-  <img src="https://github.com/night3098/PomodoroTimerQT/assets/134074263/28a6e624-53bf-4947-8a77-b8f6476358dc"></img>
-</div>
-<h1>Installing</h1>
-
+# Pomodoro Timer
+![Снимок экрана от 2023-11-19 13-50-40](https://github.com/night3098/PomodoroTimerQT/assets/134074263/7f9e1994-b89a-4c38-9333-f5c9134bfea6)
+![Снимок экрана от 2023-11-19 13-50-43](https://github.com/night3098/PomodoroTimerQT/assets/134074263/8833614e-9d44-4022-b3ea-53ac4f533e9b)
+# Installing
 ```
 git clone https://github.com/night3098/PomodoroTimerQT
 cd PomodoroTimerQT
